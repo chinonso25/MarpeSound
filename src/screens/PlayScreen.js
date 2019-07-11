@@ -121,7 +121,10 @@ export default class PlayScreen extends Component {
         onProgress={this.setTime.bind(this)}    // Callback every ~250ms with currentTime
         onEnd={this.onEnd}           // Callback when playback finishes
         onError={this.videoError}    // Callback when video cannot be loaded
-        style={styles.audioElement} />
+        style={styles.audioElement}
+        ignoreSilentSwitch={"ignore"}
+        playWhenInactive={true}
+        playInBackground={true} />
     );
 
    
