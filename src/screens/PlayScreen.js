@@ -106,10 +106,10 @@ export default class PlayScreen extends Component {
   render() {
     const track = TRACKS[this.state.selectedTrack];
     const { navigation } = this.props;
-    const title = navigation.getParam('title', 'track.title');
-    const artist = navigation.getParam('artist', 'track.artist');
-    const albumArtUrl = navigation.getParam('albumArtUrl', 'track.albumArtUrl');
-    const audioUrl = navigation.getParam('audioUrl', 'track.audioUrl');
+    const title = navigation.getParam('title', track.title);
+    const artist = navigation.getParam('artist', track.artist);
+    const albumArtUrl = navigation.getParam('albumArtUrl', track.albumArtUrl);
+    const audioUrl = navigation.getParam('audioUrl', track.audioUrl);
     const video = this.state.isChanging ? null : (
       <Video source={{uri: audioUrl}} // Can be a URL or a local file.
         ref="audioElement"

@@ -37,14 +37,13 @@ export default class Audiolist extends Component {
              data={audio}
              showsVerticalScrollIndicator={false}
              renderItem={({item}) =>
-             <View>
-               <View>
+             <View >
+               <View style={{flexDirection:'row',flex:1, flexWrap: 'wrap'}}>
                 <View style={{flexDirection:'row',flex:1, flexWrap: 'wrap'}} >
                   <Image  style={styles.thumbnailStyle} source={{ uri: item.albumArtUrl }} />
-                  <View style={{flexDirection:'row',flex:1, alignItems: 'center',flexWrap: 'wrap'}} >
-                 <Text style={styles.title}>{item.title} - {item.artist} </Text>
-                 <Text style={styles.title}>{item.title} - {item.artist} </Text>
-
+                  <View style={{flexDirection:'column', alignItems: 'flex-start',flexWrap: 'wrap'}} >
+                 <Text style={styles.title}>{item.title}  </Text>
+                 <Text style={styles.artist}> {item.artist} </Text>
                  <Play  onPress={() => {
             /* 1. Navigate to the Details route with params */
             this.props.navigation.navigate('PlayScreen',{
@@ -126,15 +125,18 @@ const styles = {
     color: 'rgba(255, 255, 255, 0.72)',
   },
   title: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
+    
   },
   artist: {
-    color: 'rgba(255, 255, 255, 0.72)',
-    fontSize: 12,
-    marginTop: 4,
-  },
+    fontSize: 16,
+    color: 'white',
+    marginTop:2,
+    marginBottom:10,
+
+    },
   Desc: {
     fontSize: 16,
     color: 'white',

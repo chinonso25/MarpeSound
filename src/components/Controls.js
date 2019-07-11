@@ -24,7 +24,9 @@ const Controls = ({
   <View style={styles.container}>
     
     <View style={{width: 40}} />
-    
+    <TouchableOpacity onPress={onBack}>
+      <Image source={require('../img/ic_skip_previous_white_36pt.png')}/>
+    </TouchableOpacity>
     <View style={{width: 20}} />
     {!paused ?
       <TouchableOpacity onPress={onPressPause}>
@@ -39,7 +41,11 @@ const Controls = ({
       </TouchableOpacity>
     }
     <View style={{width: 20}} />
-   
+    <TouchableOpacity onPress={onForward}
+      disabled={forwardDisabled}>
+      <Image style={[forwardDisabled && {opacity: 0.3}]}
+        source={require('../img/ic_skip_next_white_36pt.png')}/>
+    </TouchableOpacity>
     <View style={{width: 40}} />
     
   </View>
